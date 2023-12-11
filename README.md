@@ -27,6 +27,38 @@ Everything is designed with simplicity and flexibility in mind. We don't hyperfo
 1.	DETRAC-train: 83,791 frames; 577,899 bounding boxes)
 2.	DETRAC-test: 56,340 frames; 632,270 bounding boxes)
 
+## Preprocessing:
+Project Data Directory
+
+The data directory contains the datasets used for training and testing the tracking models. The structure is organized as follows:
+data/
+└── DETRAC/
+├── images/
+│ ├── train/
+│ └── test/
+└── labels/
+├── train/
+│ ├── MVI_20011.txt
+│ ├── MVI_20012.txt
+│ ├── MVI_20032.txt
+│ ├── MVI_20013.txt
+│ └── ...
+└── test/
+├── MVI_30001.txt
+├── MVI_30002.txt
+├── MVI_30003.txt
+├── MVI_30004.txt
+└── ...
+After preprocessing, the labels are in YOLO format. Each label file contains information about bounding boxes in the YOLO format. The format is as follows:
+<class_index> <center_x> <center_y> <width> <height>
+
+- **class_index:** Integer representing the class of the object.
+- **center_x, center_y:** Center coordinates of the bounding box relative to the image size.
+- **width, height:** Width and height of the bounding box relative to the image size.
+
+For example:
+0 0.5342 0.6352 0.2123 0.1489
+1 0.2761 0.4190 0.1234 0.0782
 
 ## Installation
 
