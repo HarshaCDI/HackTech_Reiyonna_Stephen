@@ -31,6 +31,7 @@ Everything is designed with simplicity and flexibility in mind. We don't hyperfo
 Project Data Directory
 
 The data directory contains the datasets used for training and testing the tracking models. The structure is organized as follows:
+```
 data/
 └── DETRAC/
 ├── images/
@@ -49,8 +50,9 @@ data/
 ├── MVI_30003.txt
 ├── MVI_30004.txt
 └── ...
+```
 After preprocessing, the labels are in YOLO format. Each label file contains information about bounding boxes in the YOLO format. The format is as follows:
-<class_index> <center_x> <center_y> <width> <height>
+```<class_index> <center_x> <center_y> <width> <height>```
 
 - **class_index:** Integer representing the class of the object.
 - **center_x, center_y:** Center coordinates of the bounding box relative to the image size.
