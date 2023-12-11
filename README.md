@@ -34,7 +34,7 @@ pip install boxmot
 ```
 
 
-## YOLOv8 | YOLO-NAS | YOLOX examples
+## YOLOv8
 
 <details>
 <summary>Tracking</summary>
