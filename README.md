@@ -23,7 +23,10 @@ This repo contains a collections of pluggable state-of-the-art multi-object trac
 
 ## Why using this tracking toolbox?
 
-Everything is designed with simplicity and flexibility in mind. We don't hyperfocus on results on a single dataset, we prioritize real-world results. 
+Everything is designed with simplicity and flexibility in mind. We don't hyperfocus on results on a single dataset, we prioritize real-world results. The proposal here is to create an AI model that seeks to work out vehicle detection, tracking and speed estimation. The model trains on the SUNY Albany UA-DETRAC dataset focusing of detection rates and precision in vehicle speed predictions. The dataset consists of 10 hours of videos captured at 24 different locations at 25fps (24-bit colour 960x540 rez).
+1.	DETRAC-train: 83,791 frames; 577,899 bounding boxes)
+2.	DETRAC-test: 56,340 frames; 632,270 bounding boxes)
+
 
 ## Installation
 
