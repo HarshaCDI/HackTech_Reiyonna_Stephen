@@ -4,7 +4,6 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 
-# Function to create a video writer
 def create_video_writer(video_cap, output_filename):
     # grab the width, height, and fps of the frames in the video stream.
     frame_width = int(video_cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -31,22 +30,11 @@ if __name__ == "__main__":
     device = "cuda:0"  # Choose appropriate device
     fp16 = True  # True if GPU available
 
-    # Path to pre-trained YOLOv8 model
     yolo_model_path = '../runs/detect/train4/weights/best.pt'
-
-    # Path to ReID model weights
     reid_model_weights = 'mobilenetv2_x1_4_dukemtmcreid.pt'
-
-    # Video source path
     video_source = '../Test datasets/scene01_01.mp4'
-
-    # Output video path
     output_video_path = '../TrackingResults/StrongSORT.mp4'
-
-    # Output text file path
     result_file_path = '../speedResult.txt'
-
-    # Initialize YOLO model
     yolo_model = YOLO(yolo_model_path)
 
     # Initialize tracking model
