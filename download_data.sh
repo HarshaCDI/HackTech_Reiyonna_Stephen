@@ -16,3 +16,8 @@ unzip -q DETRAC-test-data.zip -d data/
 # Download test annotations
 wget -O DETRAC-Test-Annotations-XML.zip http://detrac-db.rit.albany.edu/Data/DETRAC-Test-Annotations-XML.zip
 unzip -q DETRAC-Test-Annotations-XML.zip -d data/
+
+python train_yolo_coordinates.py > train_yolo_coordinates.py.log 2>&1
+python test_yolo_coordinates.py > test_yolo_coordinates.log 2>&1
+
+pip install ultralytics
