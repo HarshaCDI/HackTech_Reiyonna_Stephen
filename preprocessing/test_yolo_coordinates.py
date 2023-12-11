@@ -42,7 +42,7 @@ def preprocess_data(src_root, dst_root):
                             print('{} copied to {}'.format(img_file, dst_img1_dir))
 
 
-def draw_ignore_regions(image, boxes):
+def blackout_ignore_regions(image, boxes):
     if image is None:
         print('[Err]: Input image is none!')
         return -1
@@ -132,7 +132,7 @@ def generate_labels(xml_root, img_root, label_root, viz_root=None):
                         print('[Err]: read image failed!')
                         return -1
 
-                    img = draw_ignore_regions(img, boxes)
+                    img = blackout_ignore_regions(img, boxes)
                     cv2.imwrite(img_path, img)
 
                     if not (viz_root is None):
@@ -241,7 +241,7 @@ def find_files_with_suffix(root, suffix, file_list):
             find_files_with_suffix(f_path, suffix, file_list)
 
 
-def count_files(img_root, label_root):
+def count_files_in_dirs(img_root, label_root):
     img_file_list, label_file_list = [], []
 
     find_files_with_suffix(img_root, '.jpg', img_file_list)
@@ -251,7 +251,7 @@ def count_files(img_root, label_root):
     print('Total {:d} label(txt) files'.format(len(label_file_list)))
 
 
-def clean_test_set(img_root, label_root):
+def clean_test_set_mismatch(img_root, label_root):
     if not (os.path.isdir(img_root) and os.path.isdir(label_root)):
         print('[Err]: invalid root!')
         return
@@ -293,7 +293,7 @@ if __name__ == '__main__':
         viz_root='../UA_DETRAC_Hacktech_Final/data/viz_result'
     )
 
-    clean_test_set(
+    clean_test_set_mismatch(
         img_root='../data/DETRAC/images/test',
         label_root='../data/DETRAC/labels/test'
     )
@@ -304,7 +304,7 @@ if __name__ == '__main__':
         out_root='../UA_DETRAC_Hacktech_Final/data'
     )
 
-    count_files(
+    count_files_in_dirs(
         img_root='../data/DETRAC/images/test',
         label_root='../data/DETRAC/labels'
     )
